@@ -10,26 +10,26 @@ pipeline {
           expression { env.BRANCH_NAME != 'master' } // if branch is master, build ends here, otherwise continue with the stages below
       	}	
       }
+    }
 
-      stage('Enforcing Formatting') {
-        steps {
-          script {
-            ansiColor('xterm') {
-              sh "formatting good\n"
-              echo "$payload"
+    stage('Enforcing Formatting') {
+      steps {
+        script {
+          ansiColor('xterm') {
+            sh "formatting good\n"
+            echo "$payload"
 
-              }
-            }
           }
         }
+      }
+    }
       
-      stage("Testing make plan") {
-        steps {
-          script {
-		         sh "\n====building===="
+    stage("Testing make plan") {
+      steps {
+        script {
+            sh "\n====building===="
         }
       }
     }
   }
-}
 }
