@@ -8,7 +8,7 @@ pipeline {
       steps {
         script {
             sh 'echo "formatting good\n"'
-            sh 'echo "$payload"'
+            sh 'env'
         }
       }
     }
