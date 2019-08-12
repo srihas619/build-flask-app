@@ -7,11 +7,8 @@ pipeline {
     stage('Enforcing Formatting') {
       steps {
         script {
-          ansiColor('xterm') {
             sh "formatting good\n"
             echo "$payload"
-
-          }
         }
       }
     }
