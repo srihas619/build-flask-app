@@ -7,8 +7,8 @@ pipeline {
     stage('Enforcing Formatting') {
       steps {
         script {
-            sh "formatting good\n"
-            echo "$payload"
+            sh 'echo "formatting good\n"'
+            sh 'echo "$payload"'
         }
       }
     }
@@ -16,7 +16,7 @@ pipeline {
     stage("Testing make plan") {
       steps {
         script {
-            sh "\n====building===="
+            sh 'echo "\n====building===="'
         }
       }
     }
