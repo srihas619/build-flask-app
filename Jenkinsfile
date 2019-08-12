@@ -3,7 +3,7 @@ pipeline {
   agent any
 
   stages {
-    steps('Build will run on all branches EXCEPT master. Build will finish here otherwise') {
+    stage('Build will run on all branches EXCEPT master. Build will finish here otherwise') {
       when {
           expression { env.BRANCH_NAME != 'master' } // if branch is master, build ends here, otherwise continue with the stages below
       }
