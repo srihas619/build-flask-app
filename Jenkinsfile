@@ -4,10 +4,11 @@ pipeline {
 
   stages {
     stage('Build will run on all branches EXCEPT master. Build will finish here otherwise') {
-      when {
+      steps{
+	when {
           expression { env.BRANCH_NAME != 'master' } // if branch is master, build ends here, otherwise continue with the stages below
+      	}	
       }
-
     stages {
       stage('Enforcing Formatting') {
         steps {
